@@ -54,10 +54,6 @@ def main(args):
     pred_list = list_dir(args["pred_dir"])
     gt_list = list_dir(args["gt_dir"])
     os.makedirs(args["output_dir"], exist_ok=True)
-    
-    print(lidar_list)
-    print(pred_list)
-    print(gt_list)
 
     idx = 0
     for idx in range(len(lidar_list)):
@@ -89,6 +85,7 @@ def main(args):
             )
         mlab.savefig(osp.join(args["output_dir"], filename+".png"))
 
+        mlab.close(all=True)
         # fig_3d
         # mlab.show(stop=True)
 
